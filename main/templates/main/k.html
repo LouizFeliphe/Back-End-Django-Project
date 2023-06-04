@@ -1,0 +1,19 @@
+{%extends 'main/base.html'%}
+
+
+{%block content%}
+{%if message%}
+    <h1>{{message}}</h1>
+{%else%}
+    <h1>Crie sua lista e o nome do item que fará parte dessa lista</h1><br>
+    <form method="post">
+        {% csrf_token %}
+        <label for="name">Nome da lista</label>
+        <input type="text" name="name" id="name">
+        <label for="itemName">Nome do item</label>
+        <input type="text" name="itemName" id="itemName">
+        <button type="submit" name="submit" value="submit">Enviar</button>
+    </form>
+{%endif%}
+
+{% endblock %}

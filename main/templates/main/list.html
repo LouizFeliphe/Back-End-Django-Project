@@ -1,0 +1,42 @@
+{% extends 'main/base.html' %}
+
+{%block css%}
+<style>
+    .input-group-text{
+        height: 40px;
+        margin: -1;
+    }
+</style>
+{% endblock %}
+
+{% block title %}
+    View list
+{% endblock %}
+
+{%block site_name%}
+View
+{%endblock%}
+
+
+{% block content %}
+       
+{%if message%}
+    <h1>{{message}}</h1>
+{%else%}
+    <form method="post">
+            {% csrf_token %}
+            {% for i in query%}
+            <div class="input-group mb-3">
+                <input type="text", value="{{i.text}}" class="form-control">
+            </div>
+            {% endfor%}
+            </form>
+{%endif%}
+
+
+        
+        
+        
+{% endblock %}
+
+

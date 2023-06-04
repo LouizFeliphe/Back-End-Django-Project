@@ -1,0 +1,22 @@
+{%extends "main/base.html"%}
+{% load static %}
+{%block title%}Creeate an account{% endblock %}
+{%block css%}
+
+<link rel="stylesheet" href="{% static 'register/in.css'%}">
+{%endblock%}
+
+
+
+
+
+
+{%block content%}
+    <form method="POST" class="from-group">
+        {% csrf_token %}
+        {{form}}
+        <button type="submit" class="btn btn-success">Registrar-se</button>
+    </form>
+    <script src="{% static 'register/in.js'%}"></script>
+
+{% endblock %}

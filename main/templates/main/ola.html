@@ -1,0 +1,18 @@
+{% extends 'main/base.html' %}
+
+{% block title %}
+    Home
+{% endblock %}
+
+{%block site_name%}
+  Home
+{%endblock%}
+
+{%block content%}
+    {% if response.user.is_authenticated%}
+        <h1>Bem vindo {{response.user.username}}</h1>
+        <h2>Logout <a href="/logout">aqui</a></h2>
+    {%else%}
+        <h1>Sign in <a href="/login">Aqui</a></h1>
+    {% endif %}
+{%endblock%}
